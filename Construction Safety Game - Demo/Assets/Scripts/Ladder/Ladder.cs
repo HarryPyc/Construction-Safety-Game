@@ -74,6 +74,9 @@ public class Ladder : MonoBehaviour
             {
                 Destroy(gameObject);
                 hintPointsShowed.Invoke(ConfigurationUtils.LADDER);
+
+                GameObject itemList = GameObject.FindGameObjectWithTag("ItemList");
+                itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.LADDER);
             }
         }
     }

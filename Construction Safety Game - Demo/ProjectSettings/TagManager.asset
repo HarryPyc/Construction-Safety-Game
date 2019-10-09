@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ladder
+  - HintPoint
+  - Icon
+  - ItemList
   layers:
   - Default
   - TransparentFX

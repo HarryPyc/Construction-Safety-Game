@@ -23,10 +23,12 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.E))
         {
             ShowHintPoints(ConfigurationUtils.LADDER);
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -43,7 +45,7 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    void ShowHintPoints(int label)
+    public void ShowHintPoints(int label)
     {
         if(label == ConfigurationUtils.LADDER)
         {
