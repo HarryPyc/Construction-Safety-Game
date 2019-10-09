@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public struct HintPointStruct
 {
@@ -79,6 +80,16 @@ public class HintPoint : MonoBehaviour
     void OnMouseUp()
     {
         undecidedLadderAdded.Invoke(position, normal);
+        GameObject[] icons = GameObject.FindGameObjectsWithTag("Icon");
+        for(int i=icons.Length-1;i>=0;i--)
+        {
+            Debug.Log(icons[i]);
+            if(icons[i].GetComponent<Button>().IsActive())
+            {
+                Destroy(icons[i]);
+                break;
+            }
+        }
     }
 
     

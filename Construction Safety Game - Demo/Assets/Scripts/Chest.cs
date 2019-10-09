@@ -6,9 +6,13 @@ public class Chest : MonoBehaviour
 {
     private Animator animator;
     private GameObject player;
+
+    private bool isOpened;
     // Start is called before the first frame update
     void Start()
     {
+        isOpened = false;
+
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -21,10 +25,14 @@ public class Chest : MonoBehaviour
     private void OnMouseDown()
     {
         if(Vector3.Distance(transform.position,
-            player.transform.position)<4)
+            player.transform.position)<4 && isOpened == false)
         {
             print("OpenChest");
             animator.SetTrigger("Open");
+            isOpened = true;
+
+            GameObject itemList = GameObject.FindGameObjectWithTag("ItemList");
+            itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.LADDER);
         }
 
     }
