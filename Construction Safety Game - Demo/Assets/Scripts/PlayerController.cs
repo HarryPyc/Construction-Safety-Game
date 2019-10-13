@@ -3,19 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private bool isClimbing = false;
     private Animator animator;
     private NavMeshAgent agent;
     private Rigidbody rigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -56,6 +58,7 @@ public class CharacterController : MonoBehaviour
         }
         isClimbing = false;
         agent.enabled = true;
+        LevelManager.instance.GenerateLevel(1);
     }
     IEnumerator Fall(Vector3 pos, GameObject ladder)
     {

@@ -30,7 +30,7 @@ public class ClimbLadder : MonoBehaviour
         {
             print("Climb");
             
-            player.GetComponent<CharacterController>().StartClimb(end.position,willFall,gameObject);
+            player.GetComponent<PlayerController>().StartClimb(end.position,willFall,gameObject);
             
             hasClimb = true;
         }
