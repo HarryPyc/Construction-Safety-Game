@@ -8,6 +8,7 @@ TagManager:
   - HintPoint
   - Icon
   - ItemList
+  - HintCube
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - PostProcessing
   - Ground
-  - 
+  - lv2Ground
   - 
   - 
   - 
