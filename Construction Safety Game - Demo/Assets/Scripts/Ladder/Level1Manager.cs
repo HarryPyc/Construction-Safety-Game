@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class Level1Manager : MonoBehaviour
 {
     #region Fields
+
+    public int itemChoose;
+    public int itemIndex;
 
     [SerializeField] GameObject hintPointPrefab;
     [SerializeField] GameObject ladderPrefab;
@@ -18,18 +21,14 @@ public class SceneManager : MonoBehaviour
 
         EventManager.AddUndecidedLadderListener(AddUndecidedLadder);
         EventManager.AddShowHintPointsListener(ShowHintPoints);
+
+        itemChoose = 0;
+        itemIndex = -1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ShowHintPoints(ConfigurationUtils.LADDER);
-        }
-        */
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             DestroyAllHintPoints();
@@ -47,7 +46,7 @@ public class SceneManager : MonoBehaviour
 
     public void ShowHintPoints(int label)
     {
-        if(label == ConfigurationUtils.LADDER)
+        if(label == ConfigurationUtils.LADDER || label == ConfigurationUtils.WLADDER)
         {
             // First destroy all previous points
             DestroyAllHintPoints();
@@ -71,14 +70,33 @@ public class SceneManager : MonoBehaviour
     {
         DestroyAllHintPoints();
 
-        // Add new ladder to the hintpoint place
-        GameObject newLadder = Instantiate(ladderPrefab, Vector3.zero, Quaternion.identity);
+        if(itemChoose == ConfigurationUtils.LADDER)
+        {
+            // Add new ladder to the hintpoint place
+            GameObject newLadder = Instantiate(ladderPrefab, Vector3.zero, Quaternion.identity);
 
-        newLadder.transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
-        newLadder.transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, nom));
-        newLadder.transform.Translate(pos + nom * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            newLadder.transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
+            newLadder.transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, nom));
+            newLadder.transform.Translate(pos + nom * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            
+            newLadder.GetComponent<Ladder>().SetNormal(nom);
+            newLadder.GetComponent<Ladder>().SetPosition(pos);
+            newLadder.GetComponent<Ladder>().SetLabel(itemChoose);
+        }
+        else if(itemChoose == ConfigurationUtils.WLADDER)
+        {
+            // Add new ladder to the hintpoint place
+            GameObject newLadder = Instantiate(ladderPrefab, Vector3.zero, Quaternion.identity);
 
-        newLadder.GetComponent<Ladder>().SetNormal(nom);
-        newLadder.GetComponent<Ladder>().SetPosition(pos);
+            newLadder.transform.localScale *= 0.75f;
+            newLadder.transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
+            newLadder.transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, nom));
+            newLadder.transform.Translate(pos + nom * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            
+            newLadder.GetComponent<Ladder>().SetNormal(nom);
+            newLadder.GetComponent<Ladder>().SetPosition(pos);
+            newLadder.GetComponent<Ladder>().SetLabel(itemChoose);  
+        }
+
     }
 }

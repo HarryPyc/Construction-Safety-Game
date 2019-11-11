@@ -80,19 +80,11 @@ public class HintPoint : MonoBehaviour
     void OnMouseUp()
     {
         undecidedLadderAdded.Invoke(position, normal);
-        GameObject[] icons = GameObject.FindGameObjectsWithTag("Icon");
-        for(int i=icons.Length-1;i>=0;i--)
-        {
-            Debug.Log(icons[i]);
-            if(icons[i].GetComponent<Button>().IsActive())
-            {
-                Destroy(icons[i]);
-                break;
-            }
-        }
+        int itemIndex = GameObject.FindGameObjectWithTag("LadderManager").GetComponent<Level1Manager>().itemIndex;
+        GameObject.FindGameObjectWithTag("ItemList").GetComponent<ItemList>().DeleteItem(itemIndex);
     }
 
-    
+
     public void AddUndecidedLadderListener(UnityAction<Vector3, Vector3> listener)
     {
         undecidedLadderAdded.AddListener(listener);

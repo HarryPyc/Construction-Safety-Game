@@ -3,7 +3,11 @@ guid: c2dfcf4b90a3da44eb5f1aa31fb1866b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ladderIconPrefab: {fileID: 4266118951897426349, guid: a7778e4cae774844ab69c5bf190f2216,
+      type: 3}
+  - wrongLadderIconPrefab: {fileID: 239500486598545347, guid: f64378d2278d4aa4cb67e12a9fa86c8b,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

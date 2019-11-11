@@ -33,6 +33,7 @@ public class Chest : MonoBehaviour
 
             GameObject itemList = GameObject.FindGameObjectWithTag("ItemList");
             itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.LADDER);
+            itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.WLADDER);
         }
 
     }

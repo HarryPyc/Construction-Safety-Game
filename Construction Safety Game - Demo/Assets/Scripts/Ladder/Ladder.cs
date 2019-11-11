@@ -12,6 +12,7 @@ public class Ladder : MonoBehaviour
     private bool isSettled;
     private int posLabel;
     private float[] angle;
+    private int ladderLabel;
 
     HintPointsShowed hintPointsShowed;
 
@@ -27,6 +28,16 @@ public class Ladder : MonoBehaviour
     public void SetNormal(Vector3 val)
     {
         normal = val;
+    }
+
+    public void SetLabel(int label)
+    {
+        ladderLabel = label;
+    }
+
+    public int GetLabel()
+    {
+        return ladderLabel;
     }
 
     #endregion
@@ -51,7 +62,7 @@ public class Ladder : MonoBehaviour
     void Update()
     {
         // When the ladder is not settled
-        if(!isSettled)
+        if (!isSettled)
         {
             // Get mouse scroll event
             if (Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -69,23 +80,14 @@ public class Ladder : MonoBehaviour
             {
                 Settled();
             }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                Destroy(gameObject);
-                hintPointsShowed.Invoke(ConfigurationUtils.LADDER);
-
-                GameObject itemList = GameObject.FindGameObjectWithTag("ItemList");
-                itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.LADDER);
-            }
         }
     }
 
     void SwitchPosition(int toward)
     {
-        if(!isSettled)
+        if (!isSettled)
         {
-            if((posLabel > 0 && toward < 0) || (posLabel < 2 && toward > 0))
+            if ((posLabel > 0 && toward < 0) || (posLabel < 2 && toward > 0))
             {
                 posLabel += toward;
                 LadderTransform();
@@ -103,19 +105,27 @@ public class Ladder : MonoBehaviour
         transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, normal));
         transform.RotateAround(Vector3.zero, Vector3.Cross(normal, Vector3.up), angle[posLabel]);
 
-        transform.Translate(new Vector3(0.0f, -ConfigurationUtils.LadderLength * (1.0f - Mathf.Cos((angle[posLabel]*(Mathf.PI)) / 180.0f)), 0.0f), Space.World); 
+        transform.Translate(new Vector3(0.0f, -ConfigurationUtils.LadderLength * (1.0f - Mathf.Cos((angle[posLabel] * (Mathf.PI)) / 180.0f)), 0.0f), Space.World);
         transform.Translate(position + normal * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
     }
 
     void Settled()
     {
-        if(!isSettled)
+        if (!isSettled)
         {
             isSettled = true;
             Vector4 tmp = GetComponent<Renderer>().material.color;
             tmp.w = 1.0f;
             GetComponent<Renderer>().material.color = tmp;
-        } 
+            if (ladderLabel == ConfigurationUtils.LADDER && posLabel == 1)
+            {
+                gameObject.GetComponent<ClimbLadder>().willFall = false;
+            }
+            else
+            {
+                gameObject.GetComponent<ClimbLadder>().willFall = true;
+            }
+        }
     }
 
     void UnSettled()
@@ -131,11 +141,14 @@ public class Ladder : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if(isSettled)
+        if (isSettled)
         {
-            if (Input.GetMouseButtonUp(1))
+            if (Input.GetMouseButtonUp(2))
             {
-                UnSettled();
+                GameObject itemList = GameObject.FindGameObjectWithTag("ItemList");
+                itemList.GetComponent<ItemList>().AddItem(GetLabel());
+                Debug.Log("Label = " + GetLabel());
+                Destroy(gameObject);
             }
         }
 

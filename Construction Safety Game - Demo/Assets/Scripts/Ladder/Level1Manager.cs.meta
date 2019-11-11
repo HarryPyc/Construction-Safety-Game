@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4af1886e7db91f64c9fc78c35df334fc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hintPointPrefab: {fileID: 2534174876570882827, guid: edde8a5badc4b054b98e09c999c93022,
+      type: 3}
+  - ladderPrefab: {fileID: 2537135529759950650, guid: adfb8b260386a274297286abbf79e059,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

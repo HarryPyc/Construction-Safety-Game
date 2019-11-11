@@ -19,6 +19,7 @@ public class ConfigurationData
     static float ladderLength = 12.0f;
     static float ladderWidth = 1.0f;
     static int ladderCode = 1;
+    static int wrongLadderCode = 2;
 
     #endregion
 
@@ -47,6 +48,11 @@ public class ConfigurationData
     public int LADDER
     {
         get { return ladderCode; }
+    }
+
+    public int WLADDER
+    {
+        get { return wrongLadderCode; }
     }
 
     #endregion

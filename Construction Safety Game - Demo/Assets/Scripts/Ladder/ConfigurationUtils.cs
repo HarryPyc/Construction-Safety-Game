@@ -44,6 +44,11 @@ public static class ConfigurationUtils
         get { return configurationData.LADDER; }
     }
 
+    public static int WLADDER
+    {
+        get { return configurationData.WLADDER; }
+    }
+
     #endregion
 
     /// <summary>
