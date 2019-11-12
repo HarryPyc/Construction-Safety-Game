@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
         
         Instantiate(levels[index]);
         StartCoroutine(MoveCamera(transition_sec));
-        surface.BuildNavMesh();
+        //surface.BuildNavMesh();
     }
     IEnumerator MoveCamera(float sec)
     {

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     private Rigidbody rigidbody;
-
+    private int layerMask = (1 << 9) | (1 << 10);
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(ray,out hit) && hit.collider.gameObject.layer == 9)
+            if(Physics.Raycast(ray,out hit, Mathf.Infinity, layerMask))
             {
                 agent.SetDestination(hit.point);
             }

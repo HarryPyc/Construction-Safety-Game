@@ -8,6 +8,8 @@ public class MouseDrag : MonoBehaviour
     private Outline outline;
     private int layerMask = 1 << 10;
     private bool isNear;
+
+    public GameObject pointLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class MouseDrag : MonoBehaviour
     private void OnMouseDown()
     {
         target.SetActive(true);
+        pointLight.SetActive(false);
     }
     private void OnMouseUp()
     {
@@ -35,6 +38,7 @@ public class MouseDrag : MonoBehaviour
         {
             transform.position = target.transform.position;
             outline.enabled = false;
+            pointLight.SetActive(true);
             /*Destroy(target.GetComponentInParent<MouseDrag>());
             Destroy(this);*/
         }
