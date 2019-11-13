@@ -7,14 +7,16 @@ public class ItemList : MonoBehaviour
     [SerializeField] GameObject ladderIconPrefab;
     [SerializeField] GameObject wrongLadderIconPrefab;
 
-    List<Vector3> itemPos = new List<Vector3>();
+    List<Vector3> itemPos = new List<Vector3>() {
+        new Vector3(0.0f, 80.0f, 0.0f),
+        new Vector3(0.0f, -40.0f, 0.0f)
+        };
     List<GameObject> items = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        itemPos.Add(new Vector3(0.0f, 120.0f, 0.0f));
-        itemPos.Add(new Vector3(0.0f, -40.0f, 0.0f));
+
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class ItemList : MonoBehaviour
 
     public void AddItem(int item)
     {
+        gameObject.SetActive(true);
         if (item == ConfigurationUtils.LADDER)
         {
             GameObject prefabInstance = Instantiate(ladderIconPrefab);

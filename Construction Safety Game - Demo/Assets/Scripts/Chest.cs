@@ -6,6 +6,7 @@ public class Chest : MonoBehaviour
 {
     private Animator animator;
     private GameObject player;
+    public GameObject itemList;
 
     private bool isOpened;
     // Start is called before the first frame update
@@ -31,7 +32,6 @@ public class Chest : MonoBehaviour
             animator.SetTrigger("Open");
             isOpened = true;
 
-            GameObject itemList = GameObject.FindGameObjectWithTag("ItemList");
             itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.LADDER);
             itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.WLADDER);
         }

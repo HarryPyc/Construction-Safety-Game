@@ -8,8 +8,11 @@ public class UIManager : MonoBehaviour
 {
     public Button BtnTutorial;
     public Button BtnTool;
+    public Button BtnSelectLevel;
+    public Button BtnExitGame;
 
     public GameObject ScrollView;
+    public GameObject LevelsView;
     public GameObject ItemList;
 
     // Start is called before the first frame update
@@ -22,6 +25,17 @@ public class UIManager : MonoBehaviour
         BtnTutorial.onClick.AddListener(delegate ()
         {
             ShowUI(ScrollView);
+        });
+        BtnSelectLevel.onClick.AddListener(delegate ()
+        {
+            ShowUI(LevelsView);
+            ShowUI(BtnTool.gameObject);
+            ItemList.SetActive(false);
+        });
+
+        BtnExitGame.onClick.AddListener(delegate ()
+        {
+            Application.Quit();
         });
     }
 

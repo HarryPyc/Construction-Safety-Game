@@ -145,7 +145,9 @@ public class Ladder : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(2))
             {
-                GameObject itemList = GameObject.FindGameObjectWithTag("ItemList");
+                GameObject UI = GameObject.FindGameObjectWithTag("UI");
+                UI.GetComponent<UIManager>().ItemList.SetActive(true);
+                GameObject itemList = UI.GetComponent<UIManager>().ItemList;
                 itemList.GetComponent<ItemList>().AddItem(GetLabel());
                 Debug.Log("Label = " + GetLabel());
                 Destroy(gameObject);
