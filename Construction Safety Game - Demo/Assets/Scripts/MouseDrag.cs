@@ -7,7 +7,8 @@ public class MouseDrag : MonoBehaviour
     public GameObject target;
     private Outline outline;
     private int layerMask = 1 << 10;
-    private bool isNear;
+    private bool isNear = false;
+    private bool isInWater = false;
 
     public GameObject pointLight;
     // Start is called before the first frame update
@@ -38,7 +39,8 @@ public class MouseDrag : MonoBehaviour
         {
             transform.position = target.transform.position;
             outline.enabled = false;
-            pointLight.SetActive(true);
+            if(!isInWater)
+                pointLight.SetActive(true);
             /*Destroy(target.GetComponentInParent<MouseDrag>());
             Destroy(this);*/
         }
@@ -61,6 +63,10 @@ public class MouseDrag : MonoBehaviour
             isNear = true;
             target.GetComponent<HintCube>().isNear = true;
         }
+        if(other.tag == "Water")
+        {
+            isInWater = true;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -76,6 +82,10 @@ public class MouseDrag : MonoBehaviour
         {
             isNear = false;
             target.GetComponent<HintCube>().isNear = false;
+        }
+        if (other.tag == "Water")
+        {
+            isInWater = false;
         }
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - Icon
   - ItemList
   - HintCube
+  - LadderManager
+  - UI
+  - Water
   layers:
   - Default
   - TransparentFX

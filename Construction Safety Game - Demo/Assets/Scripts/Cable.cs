@@ -15,6 +15,6 @@ public class Cable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lineRenderer.SetPosition(1, endPoint.position);
+        lineRenderer.SetPosition(2, endPoint.position);
     }
 }
