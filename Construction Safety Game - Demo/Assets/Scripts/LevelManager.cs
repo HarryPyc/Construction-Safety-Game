@@ -88,6 +88,7 @@ public class LevelManager : MonoBehaviour
 
         string[] values = csvValues.Split(',');
         values[0] = l.ToString();
+        values[1] = 0.ToString();
 
         csvValues = "";
         for (int i = 0; i < values.Length; i++)
@@ -113,6 +114,7 @@ public class LevelManager : MonoBehaviour
 
         string[] values = csvValues.Split(',');
         values[0] = 0.ToString();
+        values[1] = 1.ToString();
 
         csvValues = "";
         for (int i = 0; i < values.Length; i++)

@@ -14,10 +14,19 @@ public class UIManager : MonoBehaviour
     public GameObject ScrollView;
     public GameObject LevelsView;
     public GameObject ItemList;
+    public GameObject Introduction;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(ConfigurationUtils.ShowTutorial == 1)
+        {
+            Introduction.SetActive(true);
+        }
+        else
+        {
+            Introduction.SetActive(false);
+        }
 
         BtnTool.onClick.AddListener(delegate () {
             ShowUI(ItemList);

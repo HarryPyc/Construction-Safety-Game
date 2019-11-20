@@ -25,6 +25,11 @@ public static class ConfigurationUtils
         get { return configurationData.InitialLevel; }
     }
 
+    public static int ShowTutorial
+    {
+        get { return configurationData.ShowTutorial; }
+    }
+
     public static float BuildingHeight
     {
         get { return configurationData.BuildingHeight; }

@@ -15,6 +15,7 @@ public class ConfigurationData
 
     // configuration data
     static int initialLevel = 0;
+    static int showTutorial = 1;
     static float buildingHeight = 10.0f;
     static Vector3 ladderFixRotation = new Vector3(110.0f, 0.0f, 90.0f);
     static float ladderLength = 12.0f;
@@ -29,6 +30,11 @@ public class ConfigurationData
     public int InitialLevel
     {
         get { return initialLevel; }
+    }
+
+    public int ShowTutorial
+    {
+        get { return showTutorial; }
     }
 
     public float BuildingHeight
@@ -109,6 +115,7 @@ public class ConfigurationData
         string[] values = csvValues.Split(',');
 
         initialLevel = int.Parse(values[0]);
+        showTutorial = int.Parse(values[1]);
         /*
         paddleMoveUnitsPerSecond = float.Parse(values[0]);
         ballImpulseForce = float.Parse(values[1]);
