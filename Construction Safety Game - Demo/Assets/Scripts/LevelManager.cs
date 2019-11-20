@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using System.IO;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,6 +23,12 @@ public class LevelManager : MonoBehaviour
             instance = this;
         }
         cam = Camera.main;
+        Debug.Log(ConfigurationUtils.InitialLevel);
+        for(int i=1;i<=ConfigurationUtils.InitialLevel;i++)
+        {
+            GenerateLevel(i);
+            levelIndex++;
+        }
     }
 
     // Update is called once per frame
@@ -46,5 +55,75 @@ public class LevelManager : MonoBehaviour
             dis -= speed;
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    public void ReadConfigFile(out string names, out string values)
+    {
+        StreamReader input = File.OpenText(Path.Combine(
+                Application.streamingAssetsPath, ConfigurationData.ConfigurationDataFileName));
+
+        names = input.ReadLine();
+        values = input.ReadLine();
+
+        input.Close();
+    }
+
+    public void WriteConfigFile(string csvNames, string csvValues)
+    {
+        StreamWriter sc = new StreamWriter(Path.Combine(
+                Application.streamingAssetsPath, ConfigurationData.ConfigurationDataFileName), false);
+
+        sc.WriteLine(csvNames);
+        sc.WriteLine(csvValues);
+
+        sc.Close();
+    }
+
+    public void ResetToLevel(int l)
+    {
+        string csvNames;
+        string csvValues;
+
+        ReadConfigFile(out csvNames, out csvValues);
+
+        string[] values = csvValues.Split(',');
+        values[0] = l.ToString();
+
+        csvValues = "";
+        for (int i = 0; i < values.Length; i++)
+        {
+            csvValues += values[i];
+            if (i < values.Length - 1)
+            {
+                csvValues += ',';
+            }
+        }
+
+        WriteConfigFile(csvNames, csvValues);
+
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void ResetConfigurationDataAndExit()
+    {
+        string csvNames;
+        string csvValues;
+
+        ReadConfigFile(out csvNames, out csvValues);
+
+        string[] values = csvValues.Split(',');
+        values[0] = 0.ToString();
+
+        csvValues = "";
+        for (int i = 0; i < values.Length; i++)
+        {
+            csvValues += values[i];
+            if (i < values.Length - 1)
+            {
+                csvValues += ',';
+            }
+        }
+
+        WriteConfigFile(csvNames, csvValues);
     }
 }

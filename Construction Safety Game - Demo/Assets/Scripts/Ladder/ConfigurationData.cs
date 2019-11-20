@@ -11,9 +11,10 @@ public class ConfigurationData
 {
     #region Fields
 
-    const string ConfigurationDataFileName = "ConfigurationData.csv";
+    public const string ConfigurationDataFileName = "ConfigurationData.csv";
 
     // configuration data
+    static int initialLevel = 0;
     static float buildingHeight = 10.0f;
     static Vector3 ladderFixRotation = new Vector3(110.0f, 0.0f, 90.0f);
     static float ladderLength = 12.0f;
@@ -24,6 +25,11 @@ public class ConfigurationData
     #endregion
 
     #region Properties
+
+    public int InitialLevel
+    {
+        get { return initialLevel; }
+    }
 
     public float BuildingHeight
     {
@@ -102,6 +108,7 @@ public class ConfigurationData
     {
         string[] values = csvValues.Split(',');
 
+        initialLevel = int.Parse(values[0]);
         /*
         paddleMoveUnitsPerSecond = float.Parse(values[0]);
         ballImpulseForce = float.Parse(values[1]);

@@ -20,6 +20,11 @@ public static class ConfigurationUtils
     /// </summary>
     /// <value>paddle move units per second</value>
     /// 
+    public static int InitialLevel
+    {
+        get { return configurationData.InitialLevel; }
+    }
+
     public static float BuildingHeight
     {
         get { return configurationData.BuildingHeight; }
