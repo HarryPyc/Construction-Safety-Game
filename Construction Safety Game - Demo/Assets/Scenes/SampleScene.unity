@@ -732,6 +732,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1030944421256823752, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944421256823752, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944421256823752, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944422163822222, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1030944421501177498, guid: 2738dbf942911db49998052287a40731,
         type: 3}
       propertyPath: m_Name
@@ -740,7 +760,7 @@ PrefabInstance:
     - target: {fileID: 1030944421501177498, guid: 2738dbf942911db49998052287a40731,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030944421501177494, guid: 2738dbf942911db49998052287a40731,
         type: 3}
@@ -916,6 +936,107 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420679699506, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5384615
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420679699506, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420679699506, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944422597648360, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 3.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944422597648360, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_NumberOfSteps
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944422597648360, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_Colors.m_FadeDuration
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150522, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -14.809999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150522, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150522, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_Text
+      value: "Level 1 \u2013 Rules to Consider\r\n\nObjective \u2013 Advance the character
+        to level 2 using a ladder in accordance with OSHA Rules & Regulations\r\n\nRule
+        1 \u2013 A \u2013 Frame Ladder shall not be used for access and egress to
+        another level in a closed\r leaning fashion against a wall. It must stand
+        alone in an independent fashion to be used to\r elevate to another floor.\r\n\nRule
+        2 \u2013 The character must always have 3 points of contact with the ladder.\r\n\nRule
+        3 \u2013 The ladder must extend 3 ft past the desired surface to have adequate
+        points of\r contact with the ladder while getting off and back on the ladder
+        at level 2.\r\n\nRule 4 \u2013 The angle of the ladder must not be too steep
+        nor too flat. The proper slope to a\r ladder according to OSHA is a 4:1 slope,
+        meaning for every 4 feet of height travelled, the ladder\r must extend out
+        1 foot from the wall horizontally."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030944420910150523, guid: 2738dbf942911db49998052287a40731,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2738dbf942911db49998052287a40731, type: 3}
@@ -1877,7 +1998,7 @@ RectTransform:
   m_Father: {fileID: 2057794572}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.40000004}
+  m_AnchorMin: {x: 0, y: 0.5384615}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -3038,7 +3159,7 @@ MonoBehaviour:
   surface: {fileID: 765072491}
   levels:
   - {fileID: 1168408414}
-  - {fileID: 1895634920682600507, guid: 113100c88f11fd047a7f3a6b3ae7ef22, type: 3}
+  - {fileID: 1895634920682600507, guid: 43d08f284c5fe8d48a8e1aa66bc7a215, type: 3}
   - {fileID: 5622492330402523156, guid: e7ee4d17f7c09b64fb24e4c1290014ca, type: 3}
   levelIndex: 1
 --- !u!1 &769549425
@@ -4055,8 +4176,8 @@ MonoBehaviour:
     m_PressedColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
     m_SelectedColor: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1.52
-    m_FadeDuration: 0.1
+    m_ColorMultiplier: 3.33
+    m_FadeDuration: 1.06
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -4072,8 +4193,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 594048420}
   m_HandleRect: {fileID: 594048418}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.59999996
+  m_Value: 1.0000024
+  m_Size: 0.4615385
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6604,7 +6725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1754233006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7344,8 +7465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 500}
+  m_AnchoredPosition: {x: 6.66, y: -0.0008363532}
+  m_SizeDelta: {x: -14.809999, y: 650}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1883562820
 MonoBehaviour:
@@ -7371,25 +7492,26 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 14
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
-    m_LineSpacing: 5
-  m_Text: '1.
-
-    2.
-
-    3.
-
-    4.
-
-    5.
-
-    6.'
+    m_LineSpacing: 1
+  m_Text: "Level 1 \u2013 Rules to Consider\r\n\nObjective \u2013 Advance the character
+    to level 2 using a ladder in accordance with OSHA Rules & Regulations\r\n\nRule
+    1 \u2013 A \u2013 Frame Ladder shall not be used for access and egress to another
+    level in a closed\r leaning fashion against a wall. It must stand alone in an
+    independent fashion to be used to\r elevate to another floor.\r\n\nRule 2 \u2013
+    The character must always have 3 points of contact with the ladder.\r\n\nRule
+    3 \u2013 The ladder must extend 3 ft past the desired surface to have adequate
+    points of\r contact with the ladder while getting off and back on the ladder at
+    level 2.\r\n\nRule 4 \u2013 The angle of the ladder must not be too steep nor
+    too flat. The proper slope to a\r ladder according to OSHA is a 4:1 slope, meaning
+    for every 4 feet of height travelled, the ladder\r must extend out 1 foot from
+    the wall horizontally."
 --- !u!222 &1883562821
 CanvasRenderer:
   m_ObjectHideFlags: 0

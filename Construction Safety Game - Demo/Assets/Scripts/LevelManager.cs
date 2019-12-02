@@ -127,5 +127,7 @@ public class LevelManager : MonoBehaviour
         }
 
         WriteConfigFile(csvNames, csvValues);
+        Application.Quit();
     }
+    
 }
