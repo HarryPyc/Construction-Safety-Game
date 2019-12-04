@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 28542aa1de4cb6c489152a7c788ca3ad,
+  m_Motion: {fileID: 1827226128182048838, guid: 227ba0849d18f45889a330cefbb39221,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -89,7 +89,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: ad1ee17f1cbe2bb4aba2d3b1f0555a39,
+    m_Motion: {fileID: 1827226128182048838, guid: fbbd8078f7110431f85c44c55dece20d,
       type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
@@ -98,7 +98,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: 842a070c1340cff4c8f2fc5ecb3949aa,
+    m_Motion: {fileID: 1827226128182048838, guid: f29bd92dc13fb4e52bc4750f0cc1fbe5,
       type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
@@ -127,13 +127,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsClimbing
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
