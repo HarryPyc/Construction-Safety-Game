@@ -38,8 +38,8 @@ ModelImporter:
       name: WorkerIdle
       takeName: Take 001
       internalID: 0
-      firstFrame: 121
-      lastFrame: 160
+      firstFrame: 0
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
