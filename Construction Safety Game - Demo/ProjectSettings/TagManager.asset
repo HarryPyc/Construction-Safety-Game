@@ -12,6 +12,7 @@ TagManager:
   - LadderManager
   - UI
   - Water
+  - Walls
   layers:
   - Default
   - TransparentFX

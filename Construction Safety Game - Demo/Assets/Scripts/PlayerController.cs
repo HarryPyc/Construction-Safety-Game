@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
    
     public void StartClimb(Vector3 pos, bool willFall, GameObject ladder)
     {
+        agent.enabled = false;
+        Debug.Log(ladder.transform.rotation.eulerAngles.y);
+        transform.Rotate(new Vector3(0, ladder.transform.rotation.eulerAngles.y - transform.rotation.eulerAngles.y, 0));
         if (!willFall)
             StartCoroutine(Climb(pos));
         else
@@ -48,8 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dir =pos - transform.position;
         dir = dir.normalized;
-        agent.enabled = false;
         isClimbing = true;
+        animator.SetBool("isClimbing", true);
         while (Vector3.Distance(transform.position,pos)>0.1f)
         {
 
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         isClimbing = false;
+        animator.SetBool("isClimbing", false);
         agent.enabled = true;
         LevelManager.instance.GenerateLevel(1);
     }
@@ -64,8 +68,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dir = pos - transform.position;
         dir = dir.normalized;
-        agent.enabled = false;
         isClimbing = true;
+        animator.SetBool("isClimbing", true);
         pos = Vector3.Lerp(transform.position, pos, 0.5f);
         while (Vector3.Distance(transform.position, pos) > 0.1f)
         {
@@ -73,10 +77,19 @@ public class PlayerController : MonoBehaviour
             rigidbody.MovePosition(transform.position + dir * Time.fixedDeltaTime * 6.0f);
             yield return null;
         }
+        animator.SetBool("Fall", true);
         ladder.GetComponent<Rigidbody>().isKinematic = false;
+        Camera.main.GetComponent<CameraController>().ShakeCamera();
         isClimbing = false;
         rigidbody.isKinematic = false;
-        animator.enabled = false;
+        //animator.enabled = false;
        
     }
+   /* private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Walls")
+        {
+            Camera.main.GetComponent<CameraController>().ShakeCamera();
+        }
+    }*/
 }
