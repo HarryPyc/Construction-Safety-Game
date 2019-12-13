@@ -3,7 +3,17 @@ guid: 1ac526ed4b8b7ed40996df0ef8e5f8eb
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_RollerMachine_01a
+    second: {fileID: 2100000, guid: 295e5a3c8166d3f488889f3f79b7f77e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_RollerMachine_01b
+    second: {fileID: 2100000, guid: 362f8bcf351affd419ed8d922d08b570, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -3,7 +3,12 @@ guid: 46dd4234a8e989046a52d19a3d45de1e
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_PaintBucket_01
+    second: {fileID: 2100000, guid: a5749b2c31e70204e859a9a39ed91a90, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

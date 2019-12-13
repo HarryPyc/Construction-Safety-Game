@@ -3,7 +3,17 @@ guid: 7d4a0232db15aff41b40066257dd4544
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Ladder_01a
+    second: {fileID: 2100000, guid: 74d62d1d6965fce40af621570d7bd4f8, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_Ladder_ALB
+    second: {fileID: 2800000, guid: 5ddca66fb1b0ab44ca5b6d8763e9d0d8, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

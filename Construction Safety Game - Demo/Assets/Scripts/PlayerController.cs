@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool isFalling = false;
+    public bool isWinning = false;
+
     private bool isClimbing = false;
     private Animator animator;
     private NavMeshAgent agent;
@@ -59,6 +62,8 @@ public class PlayerController : MonoBehaviour
             rigidbody.MovePosition(transform.position + dir*Time.fixedDeltaTime * 6.0f);
             yield return null;
         }
+
+        isWinning = true;
         isClimbing = false;
         animator.SetBool("isClimbing", false);
         agent.enabled = true;
@@ -81,6 +86,7 @@ public class PlayerController : MonoBehaviour
         ladder.GetComponent<Rigidbody>().isKinematic = false;
         Camera.main.GetComponent<CameraController>().ShakeCamera();
         isClimbing = false;
+        isFalling = true;
         rigidbody.isKinematic = false;
         //animator.enabled = false;
        

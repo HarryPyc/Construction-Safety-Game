@@ -24,5 +24,6 @@ public class Item : MonoBehaviour
         print("Clicked! " + index);
         GameObject.FindGameObjectWithTag("LadderManager").GetComponent<Level1Manager>().itemIndex = index;
         GameObject.FindGameObjectWithTag("LadderManager").GetComponent<Level1Manager>().itemChoose = label;
+        GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowHint(2);
     }
 }

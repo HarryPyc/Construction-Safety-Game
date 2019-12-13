@@ -3,7 +3,87 @@ guid: 3c7bc3d1bf235054db1d9e95523cc82a
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_BrickPaletteStack_01a
+    second: {fileID: 2100000, guid: 979d15b703d319b429462a683a7a3681, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Cinderstack_01a
+    second: {fileID: 2100000, guid: 838abcdf061f16448a91d7a6c95a2199, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_CordWrap_01a
+    second: {fileID: 2100000, guid: b06d92c0de2cc86478a23f72051dc0c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_ElectricDrill_01a
+    second: {fileID: 2100000, guid: 3fb39046319401446aaa3634956cf7b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Hardhat_01b
+    second: {fileID: 2100000, guid: 420efb6b9431dae46a89a8df36512a06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_PaintBucket_01
+    second: {fileID: 2100000, guid: 6b394023bf988eb47a6132dc2b79f3ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Tarp_01a
+    second: {fileID: 2100000, guid: 9091ed66125db11489a12dcee3712d2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 283770498297b5e45b9fa708f0e89ae7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_BrickPaletteStack_01_ALB
+    second: {fileID: 2800000, guid: 6da98a482f089db498d0463d0a89a84d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_CinderStack_ALB
+    second: {fileID: 2800000, guid: 7aa0cd39ac7b57a418a80f24604f35c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_ElectricDrill_ALB
+    second: {fileID: 2800000, guid: 47a3d8306f2d7ca449d905bead796169, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_PaintBucket_ALB
+    second: {fileID: 2800000, guid: ea4a543ecf0693b409ae32c466f3f415, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_Tarp_01_ALB
+    second: {fileID: 2800000, guid: 9974c72292c3be74c8976d19c1473542, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ToolBoxWithBlends_lambert1_AlbedoTransparency
+    second: {fileID: 2800000, guid: c62b6940942cd2e4a8d53e919322b214, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hardhat_MI_Hardhat_01b_AlbedoTransparency
+    second: {fileID: 2800000, guid: d4b14a2fde9e55c40b046ce577e13a68, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wrappedcord_MI_CordWrap_01a_AlbedoTransparency
+    second: {fileID: 2800000, guid: a30a4cc3f0108094d92477d10e18e92d, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

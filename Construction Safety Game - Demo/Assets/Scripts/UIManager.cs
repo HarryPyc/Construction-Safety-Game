@@ -16,9 +16,24 @@ public class UIManager : MonoBehaviour
     public GameObject ItemList;
     public GameObject Introduction;
 
+    public GameObject Hint1;
+    public GameObject Hint2;
+    public GameObject Hint3;
+
+    public GameObject YouWin;
+    public GameObject GameOver;
+
+    public GameObject Player;
+
+    private float gameOverCountDown;
+    private float youWinCountDown;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameOverCountDown = -1.0f;
+        youWinCountDown = -1.0f;
+
         if(ConfigurationUtils.ShowTutorial == 1)
         {
             Introduction.SetActive(true);
@@ -51,10 +66,75 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Player.GetComponent<PlayerController>().isFalling)
+        {
+            Player.GetComponent<PlayerController>().isFalling = false;
+            gameOverCountDown = Time.time;
+        }
+
+        if (Player.GetComponent<PlayerController>().isWinning)
+        {
+            Player.GetComponent<PlayerController>().isWinning = false;
+            youWinCountDown = Time.time;
+        }
+
+        if (gameOverCountDown >= 0)
+        {
+            if(Time.time - gameOverCountDown > 4)
+            {
+                gameOverCountDown = -1.0f;
+                ShowGameOver();
+            }
+        }
+
+        if (youWinCountDown >= 0)
+        {
+            if (Time.time - youWinCountDown > 3)
+            {
+                youWinCountDown = -1.0f;
+                ShowYouWin();
+            }
+        }
+
     }
+
     public void ShowUI(GameObject UI)
     {
         UI.SetActive(!UI.activeSelf);
+    }
+
+    public void ShowGameOver()
+    {
+        ShowUI(GameOver);
+    }
+
+    public void ShowYouWin()
+    {
+        ShowUI(YouWin);
+    }
+
+    public void ShowHint(int h)
+    {
+
+        if(h == 1)
+        {
+            Hint1.SetActive(true);
+            Hint2.SetActive(false);
+            Hint3.SetActive(false);
+        }
+
+        else if (h == 2)
+        {
+            Hint1.SetActive(false);
+            Hint2.SetActive(true);
+            Hint3.SetActive(false);
+        }
+
+        else if (h == 3)
+        {
+            Hint1.SetActive(false);
+            Hint2.SetActive(false);
+            Hint3.SetActive(true);
+        }
     }
 }

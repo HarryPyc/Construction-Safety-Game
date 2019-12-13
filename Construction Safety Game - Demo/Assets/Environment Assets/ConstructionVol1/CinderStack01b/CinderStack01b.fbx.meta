@@ -3,7 +3,12 @@ guid: 13c436c77ef50f040b9959e75a250daf
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Cinderstack_01a
+    second: {fileID: 2100000, guid: 716c694002e4f7545acbbdf4973c0c54, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

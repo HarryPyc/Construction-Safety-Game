@@ -3,7 +3,12 @@ guid: f8e8947db9cf932438b39b3e337a26cc
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_BrickPaletteStack_01a
+    second: {fileID: 2100000, guid: f395e185bc287d9449cf9ba4c4fa8b06, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

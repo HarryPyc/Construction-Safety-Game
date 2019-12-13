@@ -113,6 +113,8 @@ public class Ladder : MonoBehaviour
     {
         if (!isSettled)
         {
+            GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowHint(3);
+
             isSettled = true;
             Vector4 tmp = GetComponent<Renderer>().material.color;
             tmp.w = 1.0f;
@@ -151,9 +153,30 @@ public class Ladder : MonoBehaviour
                 itemList.GetComponent<ItemList>().AddItem(GetLabel());
                 Debug.Log("Label = " + GetLabel());
                 Destroy(gameObject);
+                    
+                GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowHint(1);
             }
         }
 
+    }
+
+    void OnMouseEnter()
+    {
+        if(isSettled)
+        {
+            GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowHint(3);
+        }
+    }
+
+
+    //鼠标离开
+
+    void OnMouseExit()
+    {
+        if (isSettled)
+        {
+            GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowHint(1);
+        }
     }
 
     public void AddShowHintPointsListener(UnityAction<int> listener)

@@ -9,6 +9,7 @@ public class Introduction : MonoBehaviour
     public Button Page1;
     public Button Page2;
     public Button Page3;
+    public Button Page4;
     public Button Close;
 
     // Start is called before the first frame update
@@ -26,12 +27,18 @@ public class Introduction : MonoBehaviour
         });
 
         Page3.onClick.AddListener(delegate () {
-            ShowUI(Page1.gameObject);
+            ShowUI(Page4.gameObject);
             ShowUI(Page3.gameObject);
+        });
+
+        Page4.onClick.AddListener(delegate () {
+            ShowUI(Page1.gameObject);
+            ShowUI(Page4.gameObject);
         });
 
         Close.onClick.AddListener(delegate ()
         {
+            GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowHint(1);
             Destroy(gameObject);
         });
     }
