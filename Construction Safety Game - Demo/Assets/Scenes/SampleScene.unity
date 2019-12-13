@@ -951,7 +951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &170076734
 Light:
   m_ObjectHideFlags: 0
@@ -1114,7 +1114,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1780,7 +1780,7 @@ PrefabInstance:
     - target: {fileID: 1030944420933957761, guid: 2738dbf942911db49998052287a40731,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030944420683412342, guid: 2738dbf942911db49998052287a40731,
         type: 3}
@@ -3586,7 +3586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &418814381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11315,6 +11315,9 @@ MonoBehaviour:
   Hint1: {fileID: 1087132044}
   Hint2: {fileID: 208026170}
   Hint3: {fileID: 690976215}
+  YouWin: {fileID: 2135264495}
+  GameOver: {fileID: 266437735}
+  Player: {fileID: 1951030127}
 --- !u!114 &1754233007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12572,7 +12575,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13278,6 +13281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a9b5164b175da419f3e6882a38d4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFalling: 0
+  isWinning: 0
 --- !u!54 &1951030132
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14852,6 +14857,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 963167787487144483, guid: 9e500fbf6f9c7aa4e861c9ed447f8d9e,
+        type: 3}
+      propertyPath: ladderPrefab
+      value: 
+      objectReference: {fileID: 4203326819314271114, guid: 60a176d0b849604479f416d04cfee635,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e500fbf6f9c7aa4e861c9ed447f8d9e, type: 3}
 --- !u!1001 &1042457137116967816
@@ -14931,5 +14942,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 963167787487144483, guid: 9e500fbf6f9c7aa4e861c9ed447f8d9e,
+        type: 3}
+      propertyPath: ladderPrefab
+      value: 
+      objectReference: {fileID: 4203326819314271114, guid: 60a176d0b849604479f416d04cfee635,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e500fbf6f9c7aa4e861c9ed447f8d9e, type: 3}
