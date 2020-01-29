@@ -25,12 +25,17 @@ public class UIManager : MonoBehaviour
 
     public GameObject Player;
 
+    private AudioSource[] m_AudioSource;
+
     private float gameOverCountDown;
     private float youWinCountDown;
 
+    
     // Start is called before the first frame update
     void Start()
     {
+        m_AudioSource = gameObject.GetComponents<AudioSource>();
+
         gameOverCountDown = -1.0f;
         youWinCountDown = -1.0f;
 
@@ -80,7 +85,7 @@ public class UIManager : MonoBehaviour
 
         if (gameOverCountDown >= 0)
         {
-            if(Time.time - gameOverCountDown > 4)
+            if(Time.time - gameOverCountDown > 2)
             {
                 gameOverCountDown = -1.0f;
                 ShowGameOver();
@@ -89,9 +94,10 @@ public class UIManager : MonoBehaviour
 
         if (youWinCountDown >= 0)
         {
-            if (Time.time - youWinCountDown > 3)
+            if (Time.time - youWinCountDown > 1)
             {
                 youWinCountDown = -1.0f;
+                m_AudioSource[0].Play();
                 ShowYouWin();
             }
         }

@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     private Rigidbody rigidbody;
+    private AudioSource[] m_AudioSource;
+
     private int layerMask = (1 << 9) | (1 << 10);
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,10 @@ public class PlayerController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
-        
+
+        m_AudioSource = gameObject.GetComponents<AudioSource>();
+
+
     }
 
     // Update is called once per frame
@@ -63,6 +68,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
+        //m_AudioSource[2].Play();
         isWinning = true;
         isClimbing = false;
         animator.SetBool("isClimbing", false);
@@ -83,6 +89,11 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         animator.SetBool("Fall", true);
+
+        // Play Sound Effect
+        m_AudioSource[0].Play();
+        m_AudioSource[1].Play();
+
         ladder.GetComponent<Rigidbody>().isKinematic = false;
         Camera.main.GetComponent<CameraController>().ShakeCamera();
         isClimbing = false;

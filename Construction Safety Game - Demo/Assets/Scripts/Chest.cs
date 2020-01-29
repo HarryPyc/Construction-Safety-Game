@@ -8,6 +8,8 @@ public class Chest : MonoBehaviour
     private GameObject player;
     public GameObject itemList;
 
+    private AudioSource[] m_AudioSource;
+
     [SerializeField]
     public GameObject doors;
 
@@ -18,6 +20,8 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_AudioSource = gameObject.GetComponents<AudioSource>();
+
         isOpened = false;
         isOpening = false;
 
@@ -46,6 +50,8 @@ public class Chest : MonoBehaviour
             //animator.SetTrigger("Open");
             isOpened = true;
             isOpening = true;
+
+            m_AudioSource[0].Play();
 
             itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.LADDER);
             itemList.GetComponent<ItemList>().AddItem(ConfigurationUtils.WLADDER);
