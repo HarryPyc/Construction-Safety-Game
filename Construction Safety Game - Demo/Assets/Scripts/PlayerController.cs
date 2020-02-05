@@ -44,20 +44,24 @@ public class PlayerController : MonoBehaviour
     }
 
    
-    public void StartClimb(Vector3 pos, bool willFall, GameObject ladder)
+    public void StartClimb(Vector3 start, Vector3 end, bool willFall, GameObject ladder)
     {
         agent.enabled = false;
         Debug.Log(ladder.transform.rotation.eulerAngles.y);
-        transform.Rotate(new Vector3(0, ladder.transform.rotation.eulerAngles.y - transform.rotation.eulerAngles.y, 0));
+        float angle = ladder.transform.rotation.eulerAngles.y == 0 ? 180 : ladder.transform.rotation.eulerAngles.y;
+        rigidbody.MovePosition(start);
+        transform.Rotate(new Vector3(0, angle - transform.rotation.eulerAngles.y, 0));
+        //if (ladder.transform.rotation.eulerAngles.x < 90 && ladder.transform.rotation.eulerAngles.x > 0)
+        //    transform.Rotate(new Vector3(0, 180, 0));
         if (!willFall)
-            StartCoroutine(Climb(pos));
+            StartCoroutine(Climb(end));
         else
-            StartCoroutine(Fall(pos,ladder));
+            StartCoroutine(Fall(end,ladder));
 
     }
     IEnumerator Climb(Vector3 pos)
     {
-        Vector3 dir =pos - transform.position;
+        Vector3 dir = pos - transform.position;
         dir = dir.normalized;
         isClimbing = true;
         animator.SetBool("isClimbing", true);

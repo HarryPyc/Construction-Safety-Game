@@ -26,11 +26,13 @@ public class ClimbLadder : MonoBehaviour
         
         if (hasClimb)
             return;
-        if(Vector3.Distance(player.transform.position, start.position) < 2)
+        Vector2 p = new Vector2(player.transform.position.x, player.transform.position.z);
+        Vector2 s = new Vector2(start.position.x, start.position.z);
+        if(Vector2.Distance(p,s) < 2)
         {
             print("Climb");
             
-            player.GetComponent<PlayerController>().StartClimb(end.position,willFall,gameObject);
+            player.GetComponent<PlayerController>().StartClimb(start.position, end.position,willFall,gameObject);
             
             hasClimb = true;
         }
