@@ -6,8 +6,10 @@ public class ClimbLadder : MonoBehaviour
 {
     public bool willFall = false;
     public Transform start, end;
+    public bool ready = false;
     private GameObject player;
     private bool hasClimb = false;
+
     // Start is called before the first frame update
     void Start()
     {

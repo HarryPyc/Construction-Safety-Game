@@ -11,6 +11,7 @@ public class Level1Manager : MonoBehaviour
 
     [SerializeField] GameObject hintPointPrefab;
     [SerializeField] GameObject ladderPrefab;
+    [SerializeField] GameObject shortLadderPrefab;
 
     #endregion
 
@@ -77,25 +78,31 @@ public class Level1Manager : MonoBehaviour
 
             newLadder.transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
             newLadder.transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, nom));
-            newLadder.transform.Translate(pos + nom * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            newLadder.transform.Translate(pos + ConfigurationUtils.LadderFixTransform + nom * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
             
             newLadder.GetComponent<Ladder>().SetNormal(nom);
             newLadder.GetComponent<Ladder>().SetPosition(pos);
             newLadder.GetComponent<Ladder>().SetLabel(itemChoose);
+
+            if (nom.x <= 0.1f && nom.x >= -0.1f) newLadder.GetComponent<Ladder>().SetPivotRight(true);
+            else newLadder.GetComponent<Ladder>().SetPivotRight(false);
         }
         else if(itemChoose == ConfigurationUtils.WLADDER)
         {
             // Add new ladder to the hintpoint place
-            GameObject newLadder = Instantiate(ladderPrefab, Vector3.zero, Quaternion.identity);
+            GameObject newLadder = Instantiate(shortLadderPrefab, Vector3.zero, Quaternion.identity);
 
-            newLadder.transform.localScale *= 0.75f;
+            //newLadder.transform.localScale *= 0.75f;
             newLadder.transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
             newLadder.transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, nom));
-            newLadder.transform.Translate(pos + nom * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            newLadder.transform.Translate(pos + ConfigurationUtils.LadderFixTransform/1.5f + nom * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
             
             newLadder.GetComponent<Ladder>().SetNormal(nom);
             newLadder.GetComponent<Ladder>().SetPosition(pos);
-            newLadder.GetComponent<Ladder>().SetLabel(itemChoose);  
+            newLadder.GetComponent<Ladder>().SetLabel(itemChoose);
+
+            if (nom.x <= 0.1f && nom.x >= -0.1f) newLadder.GetComponent<Ladder>().SetPivotRight(true);
+            else newLadder.GetComponent<Ladder>().SetPivotRight(false);
         }
 
     }

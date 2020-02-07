@@ -47,5 +47,7 @@ MonoBehaviour:
   itemIndex: 0
   hintPointPrefab: {fileID: 2534174876570882827, guid: edde8a5badc4b054b98e09c999c93022,
     type: 3}
-  ladderPrefab: {fileID: 2537135529759950650, guid: adfb8b260386a274297286abbf79e059,
+  ladderPrefab: {fileID: 4203326819314271114, guid: 60a176d0b849604479f416d04cfee635,
+    type: 3}
+  shortLadderPrefab: {fileID: 8679006371820490226, guid: 1cab5c140b4b3244abde3b5a00ae4e75,
     type: 3}

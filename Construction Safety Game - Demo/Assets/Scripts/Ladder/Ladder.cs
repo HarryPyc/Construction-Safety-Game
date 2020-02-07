@@ -13,6 +13,7 @@ public class Ladder : MonoBehaviour
     private int posLabel;
     private float[] angle;
     private int ladderLabel;
+    private bool isPivotRight;
 
     HintPointsShowed hintPointsShowed;
 
@@ -33,6 +34,11 @@ public class Ladder : MonoBehaviour
     public void SetLabel(int label)
     {
         ladderLabel = label;
+    }
+
+    public void SetPivotRight(bool val)
+    {
+        isPivotRight = val;
     }
 
     public int GetLabel()
@@ -85,7 +91,7 @@ public class Ladder : MonoBehaviour
 
     void SwitchPosition(int toward)
     {
-        if (!isSettled)
+        if (!isSettled && isPivotRight)
         {
             if ((posLabel > 0 && toward < 0) || (posLabel < 2 && toward > 0))
             {
@@ -101,12 +107,26 @@ public class Ladder : MonoBehaviour
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
 
-        transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
-        transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, normal));
-        transform.RotateAround(Vector3.zero, Vector3.Cross(normal, Vector3.up), angle[posLabel]);
+           
+        if(ladderLabel == ConfigurationUtils.LADDER)
+        {
+            transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
+            transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, normal));
+            transform.RotateAround(Vector3.zero + new Vector3(0.0f, 10.0f, 0.0f), Vector3.Cross(normal, Vector3.up), angle[posLabel]);
 
-        transform.Translate(new Vector3(0.0f, -ConfigurationUtils.LadderLength * (1.0f - Mathf.Cos((angle[posLabel] * (Mathf.PI)) / 180.0f)), 0.0f), Space.World);
-        transform.Translate(position + normal * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            transform.Translate(position + ConfigurationUtils.LadderFixTransform + normal * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            transform.Translate(new Vector3(0.0f, -ConfigurationUtils.LadderLength * (1.0f - Mathf.Cos((angle[posLabel] * (Mathf.PI)) / 180.0f)), 0.0f), Space.World);
+
+            }
+        else
+        {
+            transform.Rotate(ConfigurationUtils.LadderFixRotation, Space.World);
+            transform.RotateAround(Vector3.zero, Vector3.up, Vector3.Angle(Vector3.forward, normal));
+            transform.RotateAround(Vector3.zero + new Vector3(0.0f, 5.0f, 0.0f), Vector3.Cross(normal, Vector3.up), angle[posLabel]);
+
+            transform.Translate(position + ConfigurationUtils.LadderFixTransform / 1.5f + normal * ConfigurationUtils.LadderWidth / 2.0f + new Vector3(0.0f, ConfigurationUtils.LadderLength - ConfigurationUtils.BuildingHeight, 0.0f), Space.World);
+            transform.Translate(new Vector3(0.0f, -ConfigurationUtils.LadderLength * (1.0f - Mathf.Cos((angle[posLabel] * (Mathf.PI)) / 180.0f)), 0.0f), Space.World);
+        }
     }
 
     void Settled()
@@ -119,6 +139,7 @@ public class Ladder : MonoBehaviour
             Vector4 tmp = GetComponent<Renderer>().material.color;
             tmp.w = 1.0f;
             GetComponent<Renderer>().material.color = tmp;
+            gameObject.GetComponent<ClimbLadder>().ready = true;
             if (ladderLabel == ConfigurationUtils.LADDER && posLabel == 1)
             {
                 gameObject.GetComponent<ClimbLadder>().willFall = false;
@@ -136,7 +157,7 @@ public class Ladder : MonoBehaviour
         {
             isSettled = false;
             Vector4 tmp = GetComponent<Renderer>().material.color;
-            tmp.w = 0.5f;
+            tmp.w = 0.1f;
             GetComponent<Renderer>().material.color = tmp;
         }
     }

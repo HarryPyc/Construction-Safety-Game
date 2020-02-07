@@ -39,6 +39,12 @@ public static class ConfigurationUtils
     {
         get { return configurationData.LadderFixRotation; }
     }
+
+    public static Vector3 LadderFixTransform
+    {
+        get { return configurationData.LadderFixTransform; }
+    } 
+
     public static float LadderLength
     {
         get { return configurationData.LadderLength; }
