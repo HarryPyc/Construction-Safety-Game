@@ -59,11 +59,13 @@ public class Level1Manager : MonoBehaviour
             newHintPoint.GetComponent<HintPoint>().SetNormal(hintPoint.normal);
             newHintPoint.GetComponent<HintPoint>().SetLabel(hintPoint.label);
 
+            /*
             hintPoint = new HintPointStruct(new Vector3(5.0f, 10.0f, 5.0f), new Vector3(1.0f, 0.0f, 0.0f), ConfigurationUtils.LADDER);
             newHintPoint = Instantiate(hintPointPrefab, hintPoint.position, Quaternion.identity);
             newHintPoint.GetComponent<HintPoint>().SetPosition(hintPoint.position);
             newHintPoint.GetComponent<HintPoint>().SetNormal(hintPoint.normal);
             newHintPoint.GetComponent<HintPoint>().SetLabel(hintPoint.label);
+            */
         }
     }
 

@@ -17,6 +17,8 @@ public class Ladder : MonoBehaviour
 
     HintPointsShowed hintPointsShowed;
 
+    public GameObject GUI;
+
     #endregion
 
     #region Properties
@@ -62,6 +64,9 @@ public class Ladder : MonoBehaviour
         // Add invoker
         hintPointsShowed = new HintPointsShowed();
         EventManager.AddShowHintPointsInvoker(this);
+
+        GUI = GameObject.Find("GUI");
+        GUI.GetComponent<GUIController>().ShowLadderInfo(0);
     }
 
     // Update is called once per frame
@@ -97,6 +102,7 @@ public class Ladder : MonoBehaviour
             {
                 posLabel += toward;
                 LadderTransform();
+                GUI.GetComponent<GUIController>().ShowLadderInfo(posLabel);
             }
         }
     }
@@ -134,6 +140,7 @@ public class Ladder : MonoBehaviour
         if (!isSettled)
         {
             GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowHint(3);
+            GUI.GetComponent<GUIController>().CloseAll();
 
             isSettled = true;
             Vector4 tmp = GetComponent<Renderer>().material.color;
