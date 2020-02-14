@@ -8,8 +8,8 @@ public class ItemList : MonoBehaviour
     [SerializeField] GameObject wrongLadderIconPrefab;
 
     List<Vector3> itemPos = new List<Vector3>() {
-        new Vector3(0.0f, 80.0f, 0.0f),
-        new Vector3(0.0f, -40.0f, 0.0f)
+        new Vector3(0.0f, 60.0f, 0.0f),
+        new Vector3(0.0f, -60.0f, 0.0f)
         };
     List<GameObject> items = new List<GameObject>();
 

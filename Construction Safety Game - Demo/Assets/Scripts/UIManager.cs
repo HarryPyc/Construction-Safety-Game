@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Button BtnTutorial;
-    public Button BtnTool;
+    //public Button BtnTool;
     public Button BtnSelectLevel;
     public Button BtnExitGame;
 
@@ -48,9 +48,9 @@ public class UIManager : MonoBehaviour
             Introduction.SetActive(false);
         }
 
-        BtnTool.onClick.AddListener(delegate () {
-            ShowUI(ItemList);
-        });
+        //BtnTool.onClick.AddListener(delegate () {
+        //    ShowUI(ItemList);
+        //});
         BtnTutorial.onClick.AddListener(delegate ()
         {
             ShowUI(ScrollView);
@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
         BtnSelectLevel.onClick.AddListener(delegate ()
         {
             ShowUI(LevelsView);
-            ShowUI(BtnTool.gameObject);
+            //ShowUI(BtnTool.gameObject);
             ItemList.SetActive(false);
         });
 
