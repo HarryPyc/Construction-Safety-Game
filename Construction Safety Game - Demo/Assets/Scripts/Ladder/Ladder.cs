@@ -146,7 +146,7 @@ public class Ladder : MonoBehaviour
             Vector4 tmp = GetComponent<Renderer>().material.color;
             tmp.w = 1.0f;
             GetComponent<Renderer>().material.color = tmp;
-            gameObject.GetComponent<ClimbLadder>().ready = true;
+            
             if (ladderLabel == ConfigurationUtils.LADDER && posLabel == 1)
             {
                 gameObject.GetComponent<ClimbLadder>().willFall = false;
@@ -155,6 +155,7 @@ public class Ladder : MonoBehaviour
             {
                 gameObject.GetComponent<ClimbLadder>().willFall = true;
             }
+            gameObject.GetComponent<ClimbLadder>().ready = true;
         }
     }
 
@@ -163,6 +164,7 @@ public class Ladder : MonoBehaviour
         if (isSettled)
         {
             isSettled = false;
+            gameObject.GetComponent<ClimbLadder>().ready = false;
             Vector4 tmp = GetComponent<Renderer>().material.color;
             tmp.w = 0.1f;
             GetComponent<Renderer>().material.color = tmp;

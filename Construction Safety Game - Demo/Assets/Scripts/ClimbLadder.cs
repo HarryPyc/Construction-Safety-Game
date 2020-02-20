@@ -26,7 +26,7 @@ public class ClimbLadder : MonoBehaviour
     private void OnMouseDown()
     {
         
-        if (hasClimb)
+        if (hasClimb || !ready)
             return;
         Vector2 p = new Vector2(player.transform.position.x, player.transform.position.z);
         Vector2 s = new Vector2(start.position.x, start.position.z);

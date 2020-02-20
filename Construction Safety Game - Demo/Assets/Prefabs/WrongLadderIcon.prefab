@@ -76,7 +76,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ladder 3m
+  m_Text: Ladder 10 ft
 --- !u!1 &239500486598545347
 GameObject:
   m_ObjectHideFlags: 0
