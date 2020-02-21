@@ -81,6 +81,7 @@ public class LevelManager : MonoBehaviour
 
     public void ResetToLevel(int l)
     {
+        /*
         string csvNames;
         string csvValues;
 
@@ -101,6 +102,7 @@ public class LevelManager : MonoBehaviour
         }
 
         WriteConfigFile(csvNames, csvValues);
+        */
 
         SceneManager.LoadScene("SampleScene");
     }
