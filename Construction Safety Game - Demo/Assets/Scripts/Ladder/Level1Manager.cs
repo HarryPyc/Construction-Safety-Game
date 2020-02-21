@@ -8,6 +8,7 @@ public class Level1Manager : MonoBehaviour
 
     public int itemChoose;
     public int itemIndex;
+    public bool isHolding;
 
     [SerializeField] GameObject hintPointPrefab;
     [SerializeField] GameObject ladderPrefab;
@@ -25,6 +26,7 @@ public class Level1Manager : MonoBehaviour
 
         itemChoose = 0;
         itemIndex = -1;
+        isHolding = false;
     }
 
     // Update is called once per frame

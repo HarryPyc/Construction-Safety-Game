@@ -104,7 +104,8 @@ public class LevelManager : MonoBehaviour
         WriteConfigFile(csvNames, csvValues);
         */
 
-        SceneManager.LoadScene("SampleScene");
+
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void ResetConfigurationDataAndExit()
