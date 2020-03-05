@@ -106,11 +106,18 @@ public class PlayerController : MonoBehaviour
         //animator.enabled = false;
        
     }
-   /* private void OnCollisionEnter(Collision collision)
+   private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Walls")
+        if(collision.gameObject.layer == 9 )
         {
-            Camera.main.GetComponent<CameraController>().ShakeCamera();
+            animator.SetTrigger("FalltoGround");
         }
-    }*/
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.layer == 9 )
+        {
+            animator.SetTrigger("FalltoGround");
+        }
+    }
 }

@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
 
         if (gameOverCountDown >= 0)
         {
-            if(Time.time - gameOverCountDown > 2)
+            if(Time.time - gameOverCountDown > 4)
             {
                 gameOverCountDown = -1.0f;
                 ShowGameOver();
