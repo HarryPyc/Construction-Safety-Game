@@ -66,6 +66,7 @@ public class UIManager : MonoBehaviour
         {
             Application.Quit();
         });
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
