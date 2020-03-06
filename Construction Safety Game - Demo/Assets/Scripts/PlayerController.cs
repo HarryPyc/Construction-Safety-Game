@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         agent.enabled = false;
         Debug.Log(ladder.transform.rotation.eulerAngles.y);
-        float angle = ladder.transform.rotation.eulerAngles.y == 0 ? 180 : ladder.transform.rotation.eulerAngles.y;
+        float angle = ladder.transform.rotation.eulerAngles.y == 0 ? ladder.transform.rotation.eulerAngles.y: 180 ;
         rigidbody.MovePosition(start);
         transform.Rotate(new Vector3(0, angle - transform.rotation.eulerAngles.y, 0));
         //if (ladder.transform.rotation.eulerAngles.x < 90 && ladder.transform.rotation.eulerAngles.x > 0)
