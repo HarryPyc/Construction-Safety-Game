@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
     public GameObject YouWin;
     public GameObject GameOver;
 
+    public GameObject Feedback;
+
     public GameObject Player;
 
     private AudioSource[] m_AudioSource;
@@ -117,6 +119,12 @@ public class UIManager : MonoBehaviour
     public void ShowYouWin()
     {
         ShowUI(YouWin);
+    }
+
+    public void ShowFeedback(int type)
+    {
+        ShowUI(Feedback);
+        Feedback.GetComponent<Feedback>().ShowFeedback(type);
     }
 
     public void ShowHint(int h)

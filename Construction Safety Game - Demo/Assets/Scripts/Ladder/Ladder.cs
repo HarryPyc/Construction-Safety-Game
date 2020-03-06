@@ -154,6 +154,14 @@ public class Ladder : MonoBehaviour
             else
             {
                 gameObject.GetComponent<ClimbLadder>().willFall = true;
+                if(ladderLabel != ConfigurationUtils.LADDER)
+                {
+                    gameObject.GetComponent<ClimbLadder>().fallType = 1;
+                }
+                else
+                {
+                    gameObject.GetComponent<ClimbLadder>().fallType = 2;
+                }
             }
             gameObject.GetComponent<ClimbLadder>().ready = true;
         }

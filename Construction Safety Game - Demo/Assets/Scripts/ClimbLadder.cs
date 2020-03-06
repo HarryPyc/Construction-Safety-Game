@@ -9,6 +9,7 @@ public class ClimbLadder : MonoBehaviour
     public bool ready = false;
     private GameObject player;
     private bool hasClimb = false;
+    public int fallType;
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +33,17 @@ public class ClimbLadder : MonoBehaviour
         Vector2 s = new Vector2(start.position.x, start.position.z);
         if(Vector2.Distance(p,s) < 2)
         {
-            print("Climb");
-            
-            player.GetComponent<PlayerController>().StartClimb(start.position, end.position,willFall,gameObject);
-            
-            hasClimb = true;
+            if (willFall)
+            {
+                GameObject UI = GameObject.FindGameObjectWithTag("UI");
+                UI.GetComponent<UIManager>().ShowFeedback(fallType);
+            }
+            else
+            {
+                print("Climb");
+                player.GetComponent<PlayerController>().StartClimb(start.position, end.position, willFall, gameObject);
+                hasClimb = true;
+            }
         }
     }
 }
