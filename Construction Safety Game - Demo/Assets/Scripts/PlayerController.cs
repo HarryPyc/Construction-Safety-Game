@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Fall", true);
 
         // Play Sound Effect
-        m_AudioSource[0].Play();
+        //m_AudioSource[0].Play();
         m_AudioSource[1].Play();
 
         ladder.GetComponent<Rigidbody>().isKinematic = false;

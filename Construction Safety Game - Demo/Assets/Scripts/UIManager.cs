@@ -34,19 +34,21 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         m_AudioSource = gameObject.GetComponents<AudioSource>();
 
         gameOverCountDown = -1.0f;
         youWinCountDown = -1.0f;
 
-        if(ConfigurationUtils.ShowTutorial == 1)
-        {
-            Introduction.SetActive(true);
-        }
-        else
-        {
-            Introduction.SetActive(false);
-        }
+
+        //if(ConfigurationUtils.ShowTutorial == 1)
+        //{
+        //    Introduction.SetActive(true);
+        //}
+        //else
+        //{
+        //    Introduction.SetActive(false);
+        //}
 
         //BtnTool.onClick.AddListener(delegate () {
         //    ShowUI(ItemList);

@@ -23,8 +23,8 @@ public class LevelManager : MonoBehaviour
             instance = this;
         }
         cam = Camera.main;
-        Debug.Log(ConfigurationUtils.InitialLevel);
-        for(int i=1;i<=ConfigurationUtils.InitialLevel;i++)
+
+        for (int i=1;i<=ConfigurationUtils.InitialLevel;i++)
         {
             GenerateLevel(i);
             levelIndex++;
